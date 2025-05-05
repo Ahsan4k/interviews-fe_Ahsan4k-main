@@ -7,7 +7,6 @@ const Tree = () => {
   const [animalData, setAnimalData] = React.useState(data);
 
   const handleAddChild = (event, index) => {
-    console.log("index", index);
     if (event.key === "Enter") {
       if (Object.keys(animals).length > 0) {
         let anmData = [...animalData];

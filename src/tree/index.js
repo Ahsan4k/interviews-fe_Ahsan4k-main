@@ -3,16 +3,15 @@ import "./index.css";
 import data from "./data.json";
 
 const Tree = () => {
-  const [animals, setAnimals] = React.useState("");
+  const [animals, setAnimals] = React.useState({ textBox1: "", textBox2: "" });
   const [animalData, setAnimalData] = React.useState(data);
 
   const handleAddChild = (event, index) => {
     console.log("index", index);
     if (event.key === "Enter") {
-      if (animals.length > 0) {
+      if (Object.keys(animals).length > 0) {
         let anmData = [...animalData];
         anmData[index].children.push({ name: event.target.value });
-        console.log("anmData=========>", anmData);
         setAnimalData([...anmData]);
         setAnimals("");
       }
@@ -29,8 +28,14 @@ const Tree = () => {
               <span>{item.name}</span>
               <input
                 type="text"
-                value={animals}
-                onChange={(event) => setAnimals(event.target.value)}
+                value={index === 0 ? animals.textBox1 : animals.textBox2}
+                onChange={(event) => {
+                  if (index === 0) {
+                    setAnimals({ textBox1: event.target.value });
+                  } else {
+                    setAnimals({ textBox2: event.target.value });
+                  }
+                }}
                 onKeyDown={(event) => handleAddChild(event, index)}
               />
               {item.children.map((itm, indx) => (

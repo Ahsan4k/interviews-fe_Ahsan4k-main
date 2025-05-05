@@ -8,11 +8,15 @@ const Tree = () => {
 
   const handleAddChild = (event, index) => {
     if (event.key === "Enter") {
-      if (Object.keys(animals).length > 0) {
+      if (
+        Object.keys(animals).length > 0 &&
+        animals.textBox1 !== "" &&
+        animals.textBox2 !== ""
+      ) {
         let anmData = [...animalData];
         anmData[index].children.push({ name: event.target.value });
         setAnimalData([...anmData]);
-        setAnimals("");
+        setAnimals({ textBox1: "", textBox2: "" });
       }
     }
   };

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Mammals",
+    "children": [
+      {
+        "name": "Lion"
+      },
+      {
+        "name": "Tiger"
+      }
+    ]
+  },
+  {
+    "name": "Reptiles",
+    "children": [{ "name": "Snakes" }, { "name": "Lizards" }]
+  }
+]

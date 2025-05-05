@@ -1,0 +1,17 @@
+.tree {
+  font-family: Arial, sans-serif;
+}
+
+.node {
+  margin: 10px;
+}
+
+.node span {
+  font-weight: bold;
+}
+
+.children {
+  margin-left: 20px;
+  border-left: 1px solid #ccc;
+  padding-left: 10px;
+}
